@@ -1,0 +1,28 @@
+<div class="container paddingTB60 gray-bg">
+  <table class="table table-bordered border">
+    <thead>
+      <tr>
+        <th scope="col" style="text-align:center">ID</th>
+        <th scope="col" style="text-align:center">USER NAME</th>
+        <th scope="col" style="text-align:center">USER EMAIL</th>
+        <th scope="col" style="text-align:center">USER PHONE</th>
+        <th scope="col" style="text-align:center">BLOCK</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of userprofile">
+      <tr>
+        <th scope="row">{{ user._id }}</th>
+        <td style="text-align:center">{{ user.name }}</td>
+        <td style="text-align:center">
+          {{ user.email }}
+        </td>
+        <td style="text-align:center">
+          {{ user.phone }}
+        </td>
+        <td style="font-weight: bold;text-align:center;">
+          <a (click)="delete_profile(user._id)"><i class="fa fa-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

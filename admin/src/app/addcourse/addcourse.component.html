@@ -1,0 +1,174 @@
+<div class="container">
+  <div class="card bg-light" style="margin: 100px">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+      <h4 class="card-title mt-3 text-center">Add Course</h4>
+      <form #addcourseForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <!-- form-group -->
+        <span class="mandatory">*</span> Course Name:<br />
+        <input
+          type="text"
+          required
+          name="Course Name"
+          [class.is-invalid]="course_name.invalid && course_name.touched"
+          #course_name="ngModel"
+          [(ngModel)]="courseModel.course_name"
+          class="form-control"
+          placeholder="course Name"
+        />
+        <div
+          class="text-danger"
+          [class.d-none]="course_name.valid || course_name.untouched"
+        >
+          Course Name is Required
+        </div>
+        <!-- form-group// -->
+        <span class="mandatory">*</span> Mentor Name:<br />
+        <input
+          type="text"
+          name="mentor_name"
+          required
+          #mentor_name="ngModel"
+          class="form-control"
+          [(ngModel)]="courseModel.mentor_name"
+          [class.is-invalid]="mentor_name.invalid && mentor_name.touched"
+          placeholder="Mentor Name"
+        />
+        <div
+          class="text-danger"
+          [class.d-none]="mentor_name.valid || mentor_name.untouched"
+        >
+          Mentor Name is Required
+        </div>
+        <span class="mandatory">*</span> Mentor Experience:<br />
+        <input
+          type="text"
+          required
+          #mentor_experience="ngModel"
+          [(ngModel)]="courseModel.mentor_experience"
+          name="Mentor Experience"
+          [class.is-invalid]="
+            mentor_experience.invalid && mentor_experience.touched
+          "
+          class="form-control"
+          placeholder="Mentor Experience"
+        />
+        <div
+          class="text-danger"
+          [class.d-none]="
+            mentor_experience.valid || mentor_experience.untouched
+          "
+        >
+          Mentor Experience is Required
+        </div>
+        <span class="mandatory">*</span> No of Traning Completed:<br />
+        <input
+          type="text"
+          name="traning_completed"
+          required
+          #traning_completed="ngModel"
+          [(ngModel)]="courseModel.traning_completed"
+          [class.is-invalid]="
+            traning_completed.invalid && traning_completed.touched
+          "
+          class="form-control"
+          placeholder="No of Traning Completed"
+        />
+        <div
+          class="text-danger"
+          [class.d-none]="
+            traning_completed.valid || traning_completed.untouched
+          "
+        >
+          Traning completed is Required
+        </div>
+        <span class="mandatory">*</span> Rating:<br />
+        <input
+          type="text"
+          name="rating"
+          required
+          #rating="ngModel"
+          [(ngModel)]="courseModel.rating"
+          class="form-control"
+          [class.is-invalid]="rating.invalid && rating.touched"
+          placeholder="Rating"
+        />
+        <div
+          class="text-danger"
+          [class.d-none]="rating.valid || rating.untouched"
+        >
+          Rating is Required
+        </div>
+        <span class="mandatory">*</span> Timings:<br />
+        <input
+          type="text"
+          name="time"
+          required
+          #time="ngModel"
+          [(ngModel)]="courseModel.time"
+          class="form-control"
+          [class.is-invalid]="time.invalid && time.touched"
+          placeholder="course Time"
+        />
+        <div class="text-danger" [class.d-none]="time.valid || time.untouched">
+          Time is Required
+        </div>
+        <span class="mandatory">*</span> Course Duration:<br />
+        <input
+          type="text"
+          name="course_duration"
+          required
+          #course_duration="ngModel"
+          [(ngModel)]="courseModel.course_duration"
+          class="form-control"
+          [class.is-invalid]="
+            course_duration.invalid && course_duration.touched
+          "
+          placeholder="Course Duration"
+        />
+        <div
+          class="text-danger"
+          [class.d-none]="course_duration.valid || course_duration.untouched"
+        >
+          Course Duration is Required
+        </div>
+        <span class="mandatory">*</span> Course Price:<br />
+        <input
+          type="text"
+          name="course_price"
+          required
+          #course_price="ngModel"
+          [(ngModel)]="courseModel.course_price"
+          class="form-control"
+          [class.is-invalid]="course_price.invalid && course_price.touched"
+          placeholder="Course Price"
+        />
+        <div
+          class="text-danger"
+          [class.d-none]="course_price.valid || course_price.untouched"
+        >
+          Course Price is Required
+        </div>
+        <div class="form-group">
+          <button
+            [disabled]="addcourseForm.form.invalid"
+            type="submit"
+            class="btn btn-primary btn-block"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+      <div>
+        <br />
+        <p class="red-text" style="color: green;">{{ message }}</p>
+      </div>
+    </article>
+  </div>
+</div>
+
+<!-- 
+    
+    
+    <input type="submit" value="Submit" />
+  </form>
+</div> -->

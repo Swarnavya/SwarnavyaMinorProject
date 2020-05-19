@@ -1,0 +1,36 @@
+<div class="container paddingTB60 gray-bg">
+  <table class="table table-bordered border">
+    <thead>
+      <tr>
+        <th scope="col" style="text-align:center">ID</th>
+        <th scope="col" style="text-align:center">MENTOR NAME</th>
+        <th scope="col" style="text-align:center">MENTOR EMAIL</th>
+        <th scope="col" style="text-align:center">MENTOR PHONE</th>
+        <th scope="col" style="text-align:center">EXPERIENCE</th>
+        <th scope="col" style="text-align:center">TECHNOLOGY</th>
+        <th scope="col" style="text-align:center">BLOCK</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let mentor of mentorprofile">
+      <tr>
+        <th scope="row">{{ mentor._id }}</th>
+        <td style="text-align:center">{{ mentor.name }}</td>
+        <td style="text-align:center">
+          {{ mentor.email }}
+        </td>
+        <td style="text-align:center">
+          {{ mentor.phone }}
+        </td>
+        <td style="font-weight: bold;text-align:center">
+          {{ mentor.experience }}
+        </td>
+        <td style="text-align:center">{{ mentor.tech }}</td>
+        <td style="font-weight: bold;text-align:center;">
+          <a (click)="delete_profile(mentor._id)"
+            ><i class="fa fa-trash"></i
+          ></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,59 @@
+<div class="container ">
+  <table class="table table-bordered ">
+    <thead>
+      <tr>
+        <th scope="col" style="text-align:center">ID</th>
+        <th scope="col" style="text-align:center">COURSES</th>
+        <th scope="col" style="text-align:center">MENTOR NAME</th>
+        <th scope="col" style="text-align:center">EXPERIENCE</th>
+        <th scope="col" style="text-align:center">No of TRANINGS COMPLETED</th>
+        <th scope="col" style="text-align:center">AVERAGE RATING</th>
+        <th scope="col" style="text-align:center">TIMINGS</th>
+        <th scope="col" style="text-align:center">COURSE DURATION</th>
+        <th scope="col" style="text-align:center">PRICE</th>
+        <th scope="col" style="text-align:center">EDIT</th>
+        <th scope="col" style="text-align:center">DELETE</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let course of courses">
+      <tr>
+        <th scope="row">{{ course._id }}</th>
+        <th scope="row">{{ course.course_name }}</th>
+        <td style="text-align:center">{{ course.mentor_name }}</td>
+        <td style="font-weight: bold;text-align:center">
+          {{ course.mentor_experience }}
+        </td>
+        <td style="font-weight: bold;text-align:center">
+          {{ course.traning_completed }}
+        </td>
+        <td style="font-weight: bold;text-align:center">
+          {{ course.rating }}
+        </td>
+        <td style="text-align:center">{{ course.time }}</td>
+        <td style="text-align:center">{{ course.course_duration }}</td>
+        <td style="font-weight: bold;text-align:center">
+          {{ course.course_price }}
+        </td>
+        <!-- <td style="font-weight: bold;text-align:center;">
+          <a href=""
+            ><button
+              class="fa fa-edit"
+              style="background-color: yellow"
+            ></button
+          ></a>
+        </td> -->
+        <td
+          [routerLink]="['/update_course', course._id]"
+          style="font-weight: bold;text-align:center;"
+        >
+          <a title="Update"><i class="fa fa-edit"></i></a>
+        </td>
+        <td style="font-weight: bold;text-align:center;">
+          <a (click)="delete_course(course._id)" title="Delete"
+            ><i class="fa fa-trash"></i
+          ></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
